@@ -1,0 +1,10 @@
+@use './partials/reset';
+
+// Variables need to be imported first.
+@use './partials/tokens';
+@use './partials/mixins';
+@use './partials/functions';
+@use './partials/base';
+@use './partials/helpers';
+@use './partials/transitions';
+@use './partials/animations';

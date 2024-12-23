@@ -1,0 +1,14 @@
+@use 'sass:list';
+@use 'sass:math';
+
+@function ms($scale) {
+
+  $base: map-get($modularscale, base);
+  $ratio: map-get($modularscale, ratio);
+
+  @return $base * pow($ratio, $scale);
+}
+
+@function z-number($element, $delta: 0) {
+  @return map-get($z-index, $element) + $delta;
+}

@@ -1,0 +1,49 @@
+@use './tokens';
+@use './mixins';
+
+// Displaying
+.hidden-mobile {
+  @media (max-width: (tokens.$md-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @media (min-width: tokens.$md-breakpoint) and (max-width: (tokens.$lg-breakpoint - 1)) {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @media (min-width: tokens.$lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.hidden-large-desktop {
+  @media (min-width: tokens.$xl-breakpoint) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  @include mixins.breakpoint(lg) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: none !important;
+
+  @include mixins.breakpoint(lg) {
+    display: inherit !important;
+  }
+}
+
+.large-desktop-only {
+  display: none !important;
+
+  @include mixins.breakpoint(xl) {
+    display: inherit !important;
+  }
+}

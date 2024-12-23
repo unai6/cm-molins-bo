@@ -1,0 +1,95 @@
+// Colors
+// --------------------
+$color-primary: #014CB1;
+$color-primary-lighter: #C9E8FB;
+$color-secondary: #699B9B;
+
+$color-neutral-white: #FFFFFF;
+$color-neutral-black: #111111;
+$color-neutral-dark: #6C6C6C;
+$color-neutral-light-dark: #B6B6B6;
+$color-neutral-medium: #E6E6E6;
+$color-opacities-darkest: rgba(0, 0, 0, 0.8);
+$color-opacities-darker: rgba(0, 0, 0, 0.6);
+$color-opacities-medium: rgba(0, 0, 0, 0.4);
+
+// Border radius
+$border-radius-quark: 4px;
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-xl: 24px;
+$border-radius-xxl: 64px;
+$border-radius-pill: 100px;
+$border-radius-circular: 100%;
+
+// Border weight
+$border-weight-hairline: 1px;
+$border-weight-thin: 2px;
+$border-weight-medium: 3px;
+$border-weight-thick: 4px;
+$border-weight-heavy: 8px;
+$border-weight-heaviest: 16px;
+
+
+// Typography
+// --------------------
+
+// Font Family
+$font-size-base: 16px;
+$font-family-base: Georgia,"Times New Roman",Times,serif;
+$font-family-highlight: "Alegreya Sans","sans-serif";
+
+// Basic modular scale definition:
+// https://www.modularscale.com/?14&px&1.225
+$modularscale: (
+  base: $font-size-base,
+  ratio: 1.225 // Custom scale ratio.
+);
+
+$font-weight-light: 400;
+$font-weight-regular: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-lineheight-base: 1;
+$font-lineheight-medium: 1.2;
+$font-lineheight-long: 1.35;
+$font-lineheight-large: 1.45;
+$font-lineheight-extra-large: 1.55;
+$font-lineheight-largest: 2.5;
+
+// Spacing
+// --------------------
+$spacer: 1rem;
+$spacer-half: 0.5rem;
+$spacer-double: 2rem;
+
+// Layout
+// --------------------
+$md-breakpoint: 768px;
+$lg-breakpoint: 1024px;
+$xl-breakpoint: 1366px;
+$xxl-breakpoint: 2560px;
+
+$max-content-width: 1440px;
+$app-header-height: $spacer*6;
+
+$z-index: (
+  overall: 999,
+  popup: 91,
+  modal: 90,
+  header: 80,
+  underheader: 79,
+  dropdown: 10,
+  overbase: 1,
+  base: 0,
+  underbase: -1,
+);
+
+// Transitions
+$transition-duration-fastest: 0.1s;
+$transition-duration-fast: 0.2s;
+$transition-duration-medium: 0.3s;
+$transition-duration-slow: 0.4s;
+$transition-duration-slowest: 0.5s;

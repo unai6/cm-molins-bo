@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use './tokens';
+
+// Import cinzel as we only use one
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+$fonts: (
+  'Light': (weight: tokens.$font-weight-light, style: normal),
+  'Regular': (weight: tokens.$font-weight-regular, style: normal),
+  'Bold': (weight: tokens.$font-weight-semibold, style: normal)
+);
+
+@each $name, $properties in $fonts {
+  @font-face {
+    font-family: 'Alegreya Sans';
+    src: url('@/assets/fonts/alegreya/AlegreyaSans-#{$name}.ttf');
+    font-weight: map.get($properties, weight);
+    font-style: map.get($properties, style);
+    font-display: swap;
+  }
+}
+
+// Make type normal across browsers
+html, body {
+  color: tokens.$color-neutral-black;
+  font-size: ms(0);
+  font-family: tokens.$font-family-base;
+  font-weight: tokens.$font-weight-regular;
+  line-height: tokens.$font-lineheight-base;
+}
+
+h1 {
+  font-size: ms(3);
+  line-height: tokens.$font-lineheight-base;
+  color: tokens.$color-primary;
+}
+
+h2 {
+  font-size: ms(2);
+  line-height: tokens.$font-lineheight-long;
+  color: tokens.$color-primary;
+}
+
+h3 {
+  font-size: ms(1);
+  line-height: tokens.$font-lineheight-long;
+  color: tokens.$color-primary;
+}
