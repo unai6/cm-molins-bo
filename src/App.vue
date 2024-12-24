@@ -1,8 +1,22 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import AppNavbar from '@/components/AppNavbar.vue'
 
 </script>
 
 <template>
-  <RouterView />
+  <div class="app">
+    <AppNavbar />
+    <RouterView />
+  </div>
 </template>
+
+<style lang="scss">
+.app {
+  display: flex;
+  gap: tokens.$spacer;
+
+  & > * {
+    font-family: monospace;
+  }
+}
+</style>

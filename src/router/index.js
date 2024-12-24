@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'dashboard',
       component: () => import('@/views/DashboardView.vue'),
       meta: { isPublic: false },
     },
@@ -18,9 +18,9 @@ const router = createRouter({
       meta: { isPublic: true, unauthenticatedOnly: true },
     },
     {
-      path: '/create-investee',
-      name: 'create-investee',
-      component: () => import('@/views/investees/CreateInvesteeView.vue'),
+      path: '/investees',
+      name: 'investees',
+      component: () => import('@/views/investees/InvesteesView.vue'),
       meta: { isPublic: false },
     },
   ],

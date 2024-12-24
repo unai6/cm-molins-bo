@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 
 import Button from 'primevue/button'
+import Avatar from 'primevue/avatar'
 
 import { useAuthStore } from '@/stores/auth'
 
@@ -14,13 +15,19 @@ async function logout () {
 
   await router.push({ name: 'login' })
 }
-
-async function goToCreateInvestee () {
-  await router.push({ name: 'create-investee' })
-}
 </script>
 
 <template>
-  <Button @click="goToCreateInvestee" label="Link" variant="link" />
-  <Button @click="logout">Logout</Button>
+  <div class="dashboard-view">
+  </div>
 </template>
+
+<style lang="scss">
+.dashboard-view {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: tokens.$color-primary-lightest;
+}
+</style>
