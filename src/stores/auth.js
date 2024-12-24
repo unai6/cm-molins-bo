@@ -144,7 +144,6 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function login ({ email, password }) {
-    console.info(email, password)
     // Clean auth data before login process.
     logout()
 

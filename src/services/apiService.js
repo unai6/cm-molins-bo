@@ -28,6 +28,23 @@ const apiService = {
   put (resource, data, opts) {
     return axios.put(resource, data, opts)
   },
+  delete (resource, data, opts) {
+    return axios.delete(resource, data, opts)
+  },
+    /*
+   Perform a custom Axios request.
+
+   data is an object containing the following properties:
+   - method
+   - url
+   - data ... request payload
+   - auth (optional)
+     - username
+     - password
+  */
+     customRequest (data) {
+      return axios(data)
+    },
 }
 
 export default apiService

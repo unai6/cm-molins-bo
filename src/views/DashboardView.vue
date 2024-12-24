@@ -14,8 +14,13 @@ async function logout () {
 
   await router.push({ name: 'login' })
 }
+
+async function goToCreateInvestee () {
+  await router.push({ name: 'create-investee' })
+}
 </script>
 
 <template>
-  <Button @click="logout()">Logout</Button>
+  <Button @click="goToCreateInvestee" label="Link" variant="link" />
+  <Button @click="logout">Logout</Button>
 </template>

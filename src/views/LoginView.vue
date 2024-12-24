@@ -6,6 +6,7 @@ import { useAuthStore } from '@/stores/auth'
 
 import InputText from 'primevue/inputtext'
 import Password from 'primevue/password'
+import Button from 'primevue/button'
 
 const authStore = useAuthStore()
 
@@ -24,10 +25,10 @@ async function login () {
 
 <template>
     <div class="login-view">
-    <InputText v-model="state.email" placeholder="Email" />
-    <Password v-model="state.password" placeholder="Password" />
+      <InputText v-model="state.email" placeholder="Email" />
+      <Password v-model="state.password" placeholder="Password" />
 
-    <Button @click="login({ email: state.email, password: state.password })">Login</Button>
+      <Button @click="login({ email: state.email, password: state.password })">Login</Button>
     </div>
 </template>
 

@@ -6,6 +6,10 @@ const endpoints = {
     resetPassword: 'auth/password',
     requestPasswordReset: 'auth/password/request',
   },
+  investees: {
+    _: 'investees',
+    id: (id) => `investees/${id}`,
+  }
 }
 
 export default endpoints

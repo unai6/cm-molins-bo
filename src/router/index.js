@@ -17,6 +17,12 @@ const router = createRouter({
       component: () => import('@/views/LoginView.vue'),
       meta: { isPublic: true, unauthenticatedOnly: true },
     },
+    {
+      path: '/create-investee',
+      name: 'create-investee',
+      component: () => import('@/views/investees/CreateInvesteeView.vue'),
+      meta: { isPublic: false },
+    },
   ],
 })
 
