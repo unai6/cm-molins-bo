@@ -94,3 +94,20 @@ $transition-duration-fast: 0.2s;
 $transition-duration-medium: 0.3s;
 $transition-duration-slow: 0.4s;
 $transition-duration-slowest: 0.5s;
+
+$border-radius-s: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+
+// Basic modular scale definition:
+// https://www.modularscale.com/?14&px&1.225
+$modularscale: (
+  base: $font-size-base,
+  ratio: 1.225 // Custom scale ratio.
+);
+
+$font-weight-light: 400;
+$font-weight-regular: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;

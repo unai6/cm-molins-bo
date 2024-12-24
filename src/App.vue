@@ -15,8 +15,6 @@ import AppNavbar from '@/components/AppNavbar.vue'
   display: flex;
   gap: tokens.$spacer;
 
-  & > * {
-    font-family: monospace;
-  }
+  background-color: tokens.$color-primary-lightest;
 }
 </style>

@@ -21,12 +21,15 @@ const { investee } = storeToRefs(investeesAdditionStore)
 
 const fileuploadRef = useTemplateRef('fileuploadRef')
 
-const availableTypes = config.availableInvesteeTypes
+const { investeeTypes } = config
 
 async function createInvestee () {
   const formData = new FormData()
 
-  formData.append('investeeData', JSON.stringify(investee.value))
+  const investeeType = investee.value.type.value
+
+
+  formData.append('investeeData', JSON.stringify({...investee.value, type: investeeType }))
   formData.append('investeeFile', fileuploadRef.value.files[0])
 
   await ApiService.post(apiEndpoints.investees._, formData, {
@@ -34,11 +37,14 @@ async function createInvestee () {
      'Content-Type': 'multipart/form-data'
     },
   })
+
+  investeesAdditionStore.$reset()
+  fileuploadRef.value.clear()
 }
 
-async function deleteInvestee (id) {
-  await ApiService.delete(apiEndpoints.investees.id(id))
-}
+// async function deleteInvestee (id) {
+//   await ApiService.delete(apiEndpoints.investees.id(id))
+// }
 </script>
 
 <template>
@@ -51,7 +57,12 @@ async function deleteInvestee (id) {
     />
     <div class="form-create-investee__section">
       <InputText v-model="investee.name" placeholder="Nombre" />
-      <Select v-model="investee.type" placeholder="Tipo" />
+      <Select
+        v-model="investee.type"
+        :options="investeeTypes"
+        optionLabel="label"
+        placeholder="Tipo"
+      />
       <InputText v-model="investee.headquarters" placeholder="Sede" />
     </div>
     <div class="form-create-investee__section">
@@ -59,7 +70,6 @@ async function deleteInvestee (id) {
       <DatePicker v-model="investee.disinvestedAt" placeholder="Año desinversión" />
     </div>
     <div class="form-create-investee__section">
-      <InputText v-model="investee.category" placeholder="Categoría" />
       <InputText v-model="investee.websiteUrl" placeholder="URL web" />
     </div>
     <div class="form-create-investee__section">
@@ -67,8 +77,7 @@ async function deleteInvestee (id) {
       <Textarea v-model="investee.description.ca" placeholder="Descripción (catalán)" />
       <Textarea v-model="investee.description.en" placeholder="Descripción (inglés)" />
     </div>
-    <PrimeButton @click="createInvestee" label="Crear" />
-    <PrimeButton @click="deleteInvestee('C14UQXRKVP')" label="Eliminar" />
+    <PrimeButton @click="createInvestee" label="Crear Participada" />
   </div>
 </template>
 

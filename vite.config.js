@@ -17,6 +17,8 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
+          @use "@/assets/scss/partials/_reset.scss";
+          @use "@/assets/scss/partials/_base.scss";
           @use "@/assets/scss/partials/_tokens.scss";
           @use "@/assets/scss/partials/_mixins.scss";
           @use "@/assets/scss/partials/_functions";
